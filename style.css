@@ -1,0 +1,28 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Scroll Animation (Fade In)
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Mobile Navigation (Optional functionality can be added here)
+    console.log("Portfolio of Md. Mehedi Hasan loaded successfully.");
+});
+
+// Download CV Function
+function downloadCV() {
+    // Apnar CV file-er link ekhane diben
+    alert("CV download process starting...");
+    // window.location.href = 'your-cv-file.pdf';
+}
